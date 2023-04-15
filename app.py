@@ -34,6 +34,7 @@ def md(text):
 
 
 @app.route('/static/images/<filename>')
+@basic_auth.required
 def get_image(filename):
     response = make_response(send_file(f"static/images/{filename}"))
     response.headers['Cache-Control'] = 'public, max-age=31536000'
@@ -44,11 +45,13 @@ def get_image(filename):
 
 
 @app.route("/add", methods=["GET"])
+@basic_auth.required
 def add_note_page():
     return render_template("add.html")
 
 
 @app.route("/notes/remove/<filename>", methods=["GET"])
+@basic_auth.required
 def remove_note(filename):
     os.remove(f"{PATH}/{filename}")
 
@@ -56,6 +59,7 @@ def remove_note(filename):
 
 
 @app.route("/notes/add/<filename>", methods=["POST"])
+@basic_auth.required
 def add_note(filename):
     filename = f"{random.randrange(1000, 10000000000)}.md"
     with open(f"{PATH}/{filename}", "w", encoding="utf-8") as f:
@@ -66,6 +70,7 @@ def add_note(filename):
 
 
 @app.route("/notes/edit/<filename>", methods=["GET", "POST"])
+@basic_auth.required
 def edit_note(filename):
     lines = []
     with open(f"{PATH}/{filename}", "r", encoding="utf-8") as f:
@@ -89,6 +94,7 @@ def edit_note(filename):
 
 
 @app.route("/notes/<filename>", methods=["GET"])
+@basic_auth.required
 def get_notes_by_filename(filename):
     html_lines = []
     with open(f"{PATH}/{filename}", "r", encoding="utf-8") as file:
