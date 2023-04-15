@@ -2,6 +2,8 @@
 
 This is a simple Flask web application that allows you to create notes with markdown support. The app also includes basic authentication to protect your notes with a username and password.
 
+<p ALIGN="center"><img src="https://raw.githubusercontent.com/ayxkaddd/nots/main/static/favicon.ico" width="90" height="90"></p>
+
 # Configuration
 
 Before running the app, you'll need to fill in the values in config.py. Here are the variables you'll need to set:
@@ -34,5 +36,3 @@ Note that the basic authentication provided by this app is not secure enough for
 # Contributing
 
 If you find a bug or have a feature request, feel free to open an issue or submit a pull request on GitHub.
-
-<br><p ALIGN="center"><img src="https://raw.githubusercontent.com/ayxkaddd/nots/main/static/favicon.ico" width="90" height="90"></p>
