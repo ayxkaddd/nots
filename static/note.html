@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #303030;
+        }
+
+        * {
+            color: #efeeee;
+            font-size: 18px;
+        }
+        
+        h1 {
+            color:#fff6dd;
+            font-size: 33px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        p {
+          color:#efeeee;
+          font-size: 18px;
+        }
+
+        .button-container {
+          display: flex;
+          justify-content: space-between;
+        }
+        
+        button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          padding: 10px 20px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+          background-color: #4e9ef3;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button onclick="window.location.href='/notes/edit/{{ file }}'">Edit note</button>
+    <button style="margin-left: 10px;" onclick="window.location.href='/notes/remove/{{ file }}'">Remove note</button><hr/>
+
+    {{ content | md | safe}}
+
+</body>
+</html>

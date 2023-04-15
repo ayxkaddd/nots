@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">    
+</head>
+<body>
+    <br>
+    <div class="profile">
+        <div class="img-wrapper">
+           <img src="{{ url_for('static', filename=profile.ICON_PATH) }}" width="110" height="110" alt="pfp"> 
+          </div>
+          <div class="text-wrapper">
+            <h1>{{ profile.USERNAME }} diary</h1>
+            <p>Canis dormire potest. Sed canis dormire non potest. Forsitan canis, sed? Somnus.
+            <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus ut magna dignissim dictum.
+            </p>
+          </div>
+    </div>
+
+    <div class="note-box">
+    {% for note in notes %}
+        <h1>{{ note.date }} - <a href='/notes/{{ note.filename }}' title="{{ note.caption }}">{{ note.caption[:30] }}{% if len(note.caption) > 30 %}...{% endif %}</a></h1>
+    {% endfor %}
+    </div>
+    <br>
+    <p align="center"><button onclick="window.location.href='/add'">Add note</button></p>
+</body>
+</html>
