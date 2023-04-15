@@ -34,3 +34,5 @@ Note that the basic authentication provided by this app is not secure enough for
 # Contributing
 
 If you find a bug or have a feature request, feel free to open an issue or submit a pull request on GitHub.
+
+<br><p ALIGN="center"><img src="https://raw.githubusercontent.com/ayxkaddd/nots/main/static/favicon.ico" width="90" height="90"></p>
